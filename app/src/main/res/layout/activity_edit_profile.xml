@@ -8,16 +8,23 @@
     tools:context=".EditProfileActivity">
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <androidx.cardview.widget.CardView
         android:id="@id/cardView5"
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:layout_marginTop="40dp"
+        app:cardCornerRadius="65dp"
         android:src="@drawable/dr"
+        app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dr"/>
+    </androidx.cardview.widget.CardView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"

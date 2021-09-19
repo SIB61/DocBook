@@ -1,10 +1,13 @@
 package com.example.docbook;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import com.example.docbook.databinding.ActivityMainBinding;
 
@@ -20,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        setSupportActionBar(binding.toolbarId);
+
         ArrayList<DoctorData> listData1 = new ArrayList<>();
         DoctorData topDoctorListData = new DoctorData("Dr. Tasnim Choia", "UAMC", "Mbbs from UAMC, FCPS , Heart specialist", "heart", R.raw.dr);
         for (int i = 0; i < 10; i++) listData1.add(topDoctorListData);
@@ -32,8 +37,26 @@ public class MainActivity extends AppCompatActivity {
                   startActivity(new Intent(MainActivity.this,DoctorListActivity.class));
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_bar_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.profileMenu:
+                startActivity(new Intent(MainActivity.this,DoctorProfileActivity.class));
+                break;
+            case R.id.notificationMenu:
+
+                break;
+
+        }
+        return super.onOptionsItemSelected(item);
 
     }
 }

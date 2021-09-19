@@ -5,16 +5,20 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
+
 public class TopDrListAdapter extends RecyclerView.Adapter {
-    private ArrayList<DoctorData> listData = new ArrayList<>();
+    private ArrayList<DoctorData> listData;
 
     public TopDrListAdapter(ArrayList<DoctorData> listData) {
         this.listData = listData;
@@ -30,10 +34,13 @@ public class TopDrListAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         TextView textView = holder.itemView.findViewById(R.id.doctorNameId);
         TextView textView1= holder.itemView.findViewById(R.id.doctorDesId);
-        ImageView imageView= holder.itemView.findViewById(R.id.cardView);
+        CircleImageView imageView= holder.itemView.findViewById(R.id.topDrProfilePic);
         textView.setText(listData.get(position).getName());
         textView1.setText(listData.get(position).getAdditionalDegree());
-        imageView.setImageResource(listData.get(position).getImg());
+        imageView.setImageResource(R.drawable.dr);
+
+
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

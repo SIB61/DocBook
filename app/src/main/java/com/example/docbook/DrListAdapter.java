@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class DrListAdapter extends RecyclerView.Adapter {
 
-    private ArrayList<DoctorData> drList = new ArrayList<>();
+    private ArrayList<DoctorData> drList ;
 
     public DrListAdapter(ArrayList<DoctorData> drList) {
         this.drList = drList;
