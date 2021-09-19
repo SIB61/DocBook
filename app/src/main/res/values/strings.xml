@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">DocBook</string>
+    <string-array name="bd_districts">
+        <item>All</item>
+        <item>Dhaka</item>
+        <item>Faridpur</item>
+        <item>Gazipur</item>
+        <item>Gopalganj</item>
+        <item>Jamalpur</item>
+        <item>Kishoreganj</item>
+        <item>Madaripur</item>
+        <item>Manikganj</item>
+        <item>Munshiganj</item>
+        <item>Mymensingh</item>
+        <item>Narayanganj</item>
+    </string-array>
 </resources>

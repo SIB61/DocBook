@@ -27,19 +27,11 @@
         android:text="MBBS from DMC, FCPS ,  Heart Specialist"
         android:textSize="16sp" />
 
-   <androidx.cardview.widget.CardView
+   <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/cardView"
         android:layout_width="100dp"
         android:layout_alignParentEnd="true"
         android:layout_height="100dp"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="0dp">
-
-        <ImageView
-            android:id="@+id/doctorImgId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/dr"/>
-    </androidx.cardview.widget.CardView>
+       android:src="@drawable/dr"/>
 
 </RelativeLayout>
