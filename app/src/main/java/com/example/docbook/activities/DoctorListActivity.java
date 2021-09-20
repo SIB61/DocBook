@@ -1,26 +1,25 @@
-package com.example.docbook;
+package com.example.docbook.activities;
 
 import static java.util.Arrays.sort;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.widget.ArrayAdapter;
 
+import com.example.docbook.adapters.DrListAdapter;
+import com.example.docbook.R;
 import com.example.docbook.databinding.ActivityDoctorListBinding;
+import com.example.docbook.models.DoctorInfoModel;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class DoctorListActivity extends AppCompatActivity {
 private ActivityDoctorListBinding binding;
 private DrListAdapter adapter;
-private ArrayList<DoctorData> drList;
+private ArrayList<DoctorInfoModel> drList;
 private String[] DistrictList={"All","Dhaka", "Faridpur" ,"Gazipur", "Gopalganj", "Jamalpur", "Kishoreganj", "Madaripur", "Manikganj", "Munshiganj",
         "Mymensingh", "Narayanganj", "Narsingdi", "Netrokona", "Rajbari", "Shariatpur", "Sherpur", "Tangail", "Bogura", "Joypurhat", "Naogaon",
         "Natore", "Nawabganj", "Pabna", "Rajshahi", "Sirajgonj", "Dinajpur", "Gaibandha", "Kurigram", "Lalmonirhat", "Nilphamari", "Panchagarh", "Rangpur",
@@ -34,7 +33,7 @@ private String[] DistrictList={"All","Dhaka", "Faridpur" ,"Gazipur", "Gopalganj"
         binding=ActivityDoctorListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.drListRecycleView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
-        DoctorData data=new DoctorData("Dr. Tasnim Choia","UAMC","FCPS","cardiologist",R.raw.dr);
+        DoctorInfoModel data=new DoctorInfoModel("Dr. Tasnim Choia","UAMC","FCPS","cardiologist", R.raw.dr);
         drList=new ArrayList<>();
         for(int i=0;i<=10;i++)
         {

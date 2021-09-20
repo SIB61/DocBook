@@ -1,4 +1,4 @@
-package com.example.docbook;
+package com.example.docbook.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioGroup;
 
+import com.example.docbook.R;
 import com.example.docbook.databinding.ActivityEditProfileBinding;
 
 public class EditProfileActivity extends AppCompatActivity {
@@ -18,7 +19,7 @@ private ActivityEditProfileBinding binding;
         binding.isDoctor.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if(checkedId!=R.id.doctor){
+                if(checkedId!= R.id.doctor){
                     binding.linearLayout4.setVisibility(View.GONE);
                 }
                 else {

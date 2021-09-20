@@ -1,8 +1,10 @@
-package com.example.docbook;
+package com.example.docbook.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.docbook.R;
 
 public class MyProfileActivity extends AppCompatActivity {
 

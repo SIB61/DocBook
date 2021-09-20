@@ -1,4 +1,4 @@
-package com.example.docbook;
+package com.example.docbook.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,55 +9,70 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.docbook.databinding.ActivitySignUpBinding;
+import com.example.docbook.databinding.ActivityLogInBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class SignUpActivity extends AppCompatActivity {
-    private ActivitySignUpBinding binding;
-    private FirebaseAuth mAuth;
-    private String email,password;
+public class LogInActivity extends AppCompatActivity {
+private ActivityLogInBinding binding;
+private FirebaseAuth mAuth;
+private String email,password;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+    }
+
+    private void updateUI(FirebaseUser currentUser) {
+        if(currentUser!=null)
+        {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivitySignUpBinding.inflate(getLayoutInflater());
+        binding=ActivityLogInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         mAuth = FirebaseAuth.getInstance();
+
     }
 
-    public void signUp(View view) {
-        email=binding.email.getText().toString().trim();
-        password=binding.email.getText().toString().trim();
+    public void goToSignUp(View view) {
+        startActivity(new Intent(this, SignUpActivity.class));
+    }
 
-        mAuth.createUserWithEmailAndPassword(email, password)
+    public void signIn(View view) {
+        email=binding.email.getText().toString().trim();
+        password=binding.password.getText().toString().trim();
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("TAG", "createUserWithEmail:success");
+                            Log.d("TAG", "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w("TAG", "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(SignUpActivity.this, "Authentication failed.",
+                            Log.w("TAG", "signInWithEmail:failure", task.getException());
+                            Toast.makeText(LogInActivity.this, email+password,
                                     Toast.LENGTH_SHORT).show();
                             updateUI(null);
                         }
-                    }
-                });
+
+
     }
 
-    private void updateUI(FirebaseUser user) {
-       if (user!=null)
-       {
-           startActivity(new Intent(this,MainActivity.class));
-           finish();
-       }
+    });
     }
+
 }

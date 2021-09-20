@@ -1,6 +1,6 @@
-package com.example.docbook;
+package com.example.docbook.models;
 
-public class DoctorData {
+public class DoctorInfoModel {
         String name;
         String mbbsFrom;
         String additionalDegree;
@@ -9,7 +9,7 @@ public class DoctorData {
         String location;
         int img;
 
-    public DoctorData() {
+    public DoctorInfoModel() {
     }
 
     public String getClinicAddress() {
@@ -28,7 +28,7 @@ public class DoctorData {
         this.location = location;
     }
 
-    public DoctorData(String name, String mbbsFrom, String additionalDegree, String specialistOn, String clinicAddress, String location, int img) {
+    public DoctorInfoModel(String name, String mbbsFrom, String additionalDegree, String specialistOn, String clinicAddress, String location, int img) {
         this.name = name;
         this.mbbsFrom = mbbsFrom;
         this.additionalDegree = additionalDegree;
@@ -38,7 +38,7 @@ public class DoctorData {
         this.img = img;
     }
 
-    public DoctorData(String name, String mbbsFrom, String additionalDegree, String specialistOn, int img) {
+    public DoctorInfoModel(String name, String mbbsFrom, String additionalDegree, String specialistOn, int img) {
             this.name = name;
             this.mbbsFrom = mbbsFrom;
             this.additionalDegree = additionalDegree;

@@ -1,4 +1,4 @@
-package com.example.docbook;
+package com.example.docbook.adapters;
 
 
 import android.content.Intent;
@@ -10,7 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
+import com.example.docbook.R;
+import com.example.docbook.activities.DoctorProfileActivity;
+import com.example.docbook.models.DoctorInfoModel;
 
 import java.util.ArrayList;
 
@@ -18,9 +20,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class TopDrListAdapter extends RecyclerView.Adapter {
-    private ArrayList<DoctorData> listData;
+    private ArrayList<DoctorInfoModel> listData;
 
-    public TopDrListAdapter(ArrayList<DoctorData> listData) {
+    public TopDrListAdapter(ArrayList<DoctorInfoModel> listData) {
         this.listData = listData;
     }
 
@@ -45,7 +47,7 @@ public class TopDrListAdapter extends RecyclerView.Adapter {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                v.getContext().startActivity(new Intent(v.getContext(),DoctorProfileActivity.class));
+                v.getContext().startActivity(new Intent(v.getContext(), DoctorProfileActivity.class));
             }
         });
     }

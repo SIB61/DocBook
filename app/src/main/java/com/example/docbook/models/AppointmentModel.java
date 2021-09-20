@@ -1,9 +1,9 @@
-package com.example.docbook;
+package com.example.docbook.models;
 
-public class AppointmentName {
+public class AppointmentModel {
     private String patientId,doctorId,patientName,doctorName,patientAge,patientGender,patientProblemInfo,date,schedule;
 
-    public AppointmentName(String patientId, String doctorId, String patientName, String doctorName, String patientAge, String patientGender, String patientProblemInfo, String date, String schedule) {
+    public AppointmentModel(String patientId, String doctorId, String patientName, String doctorName, String patientAge, String patientGender, String patientProblemInfo, String date, String schedule) {
         this.patientId = patientId;
         this.doctorId = doctorId;
         this.patientName = patientName;

@@ -1,10 +1,11 @@
-package com.example.docbook;
+package com.example.docbook.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import com.example.docbook.R;
 import com.example.docbook.databinding.ActivityDoctorProfileBinding;
 
 public class DoctorProfileActivity extends AppCompatActivity {

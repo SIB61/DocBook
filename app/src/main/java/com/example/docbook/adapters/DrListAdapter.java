@@ -1,25 +1,23 @@
-package com.example.docbook;
+package com.example.docbook.adapters;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewbinding.ViewBinding;
+
+import com.example.docbook.R;
+import com.example.docbook.models.DoctorInfoModel;
 
 import java.util.ArrayList;
 
 public class DrListAdapter extends RecyclerView.Adapter {
 
-    private ArrayList<DoctorData> drList ;
+    private ArrayList<DoctorInfoModel> drList ;
 
-    public DrListAdapter(ArrayList<DoctorData> drList) {
+    public DrListAdapter(ArrayList<DoctorInfoModel> drList) {
         this.drList = drList;
     }
 
